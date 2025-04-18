@@ -1,0 +1,19 @@
+@import "../../bootstrap/functions";
+@import "../../bootstrap/variables";
+@import "../../bootstrap/mixins";
+
+$mainform-bg: #f5f5f5;
+$mainform-acent: #9c9c9c;
+$form-primary: $primary;
+$form-black: $black;
+$form-white: $white;
+$form-text: $black;
+$form-rounded: 0.4rem;
+$input-size: 2.5rem;
+$form-gap: 0.4rem;
+
+
+@import "modal";
+@import "form";
+@import "types";
+@import "results";

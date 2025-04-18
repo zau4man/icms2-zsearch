@@ -1,0 +1,56 @@
+.zsearch__items {
+  display: flex;
+  flex-direction: column;
+  gap: $form-gap;
+}
+
+.zs-item {
+
+  border-bottom: 1px solid $mainform-bg;
+  padding-bottom: 0.5rem;
+
+  em {
+
+  }
+}
+
+.zs-item__row {
+  display: flex;
+  flex-direction: column;
+  gap: $form-gap;
+}
+
+
+.zs-item__date {
+  font-size: 0.75rem;
+  color: $mainform-acent;
+}
+
+.zs-item__content {
+  flex-grow: 1;
+}
+
+.zs-item__title {
+  font-size: 130%;
+  line-height: 1.1;
+  font-weight: bold;
+}
+
+.zs-item__text {
+  color: $form-text;
+}
+
+.zs-item__photo img {
+  display: block;
+  border-radius: $form-rounded;
+}
+
+@include media-breakpoint-up(sm) {
+  .zs-item__row {
+    flex-direction: row;
+  }
+  .zs-item__photo {
+    flex: 0 0 200px;
+  }
+
+}

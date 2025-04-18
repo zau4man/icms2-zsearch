@@ -1,0 +1,49 @@
+.zsearch {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: $form-white;
+  display: flex;
+  justify-content: center;
+  z-index: 20;
+  overflow-y: auto;
+}
+
+.zsearch__body {
+  width: 90vw;
+  max-width: 900px;
+  min-height: 400px;
+  margin-top: calc(50vh - 200px);
+  transition: margin-top 0.3s ease-out;
+
+  &.finded {
+    margin-top: 0;
+  }
+}
+
+.zsearch__close {
+  margin-left: auto;
+  width: $input-size;
+  height: $input-size;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: $mainform-acent;
+}
+
+.body_overlow {
+  overflow: hidden;
+}
+
+.zsearch__error {
+  color: $form-text;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+.zsearch__more {
+  height: 50px;
+}

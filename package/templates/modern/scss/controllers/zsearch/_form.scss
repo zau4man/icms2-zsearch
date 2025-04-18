@@ -1,0 +1,108 @@
+.zsearch__form {
+  background: $mainform-bg;
+  padding: $form-gap;
+  border-radius: $form-rounded;
+}
+
+.zsearch__input {
+  flex-grow: 1;
+  margin: 0 0.5rem 0 1rem;
+  position: relative;
+  padding-right: 1rem;
+}
+
+.zsearch__inputclean {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: $mainform-acent;
+}
+
+.zsearch__mainform {
+
+  display: flex;
+
+  input, button {
+    height: $input-size;
+    border: 0;
+    outline: none;
+  }
+
+  input {
+    background: transparent;
+    font-weight: bold;
+    font-size: 110%;
+    color: $black;
+    padding: 0;
+    min-width: 0;
+    width: 100%;
+  }
+
+  button, .zsearch__btn {
+    min-width: $input-size;
+    border-radius: $form-rounded;
+    flex-shrink: 0;
+    padding: 0;
+  }
+
+  .zsearch__btn {
+    background: $white;
+    color: $mainform-acent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-right: $form-gap;
+  }
+
+  button[type=submit] {
+    background: $form-primary;
+    color: $white;
+
+    span {
+      padding-left: 0.5rem;
+    }
+
+    @include media-breakpoint-up(sm) {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+}
+
+.zsearch__options {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease-out;
+}
+
+.zsearch__options div {
+  display: flex;
+  gap: $form-gap;
+  overflow: hidden;
+  /*  height: 0;
+    overflow: hidden;
+    transform: translateY(-15px);
+    transition: transform 0.3s ease;*/
+  @include media-breakpoint-down(xs) {
+    gap: 0;
+  }
+
+  select {
+    margin-top: $form-gap;
+    box-shadow: none !important;
+    @include media-breakpoint-down(xs) {
+      font-size: 0.9rem;
+      padding-left: 0.25rem;
+      padding-right: 0.5rem;
+    }
+  }
+}
+
+.zsearch__options_opened {
+  grid-template-rows: 1fr;
+  /*  height: auto;
+    transform: translateY(0);*/
+}
