@@ -14,8 +14,8 @@
 .zsearch__body {
   width: 90vw;
   max-width: 900px;
-  min-height: 400px;
-  margin-top: calc(50vh - 200px);
+  min-height: 140px;
+  margin-top: calc(50dvh - 100px);
   transition: margin-top 0.3s ease-out;
 
   &.finded {

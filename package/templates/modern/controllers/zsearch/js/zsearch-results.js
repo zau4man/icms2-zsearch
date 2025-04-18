@@ -5,8 +5,9 @@ export default {
     setup() {
         return {}
     },
-    template: `<div class="zsearch__items" v-if="results.length">
+    template: `<transition name="fade-results"><div class="zsearch__items" v-if="results.length">
                 <div class="zsearch__item zs-item" v-for="item in results" :key="item.id">
+                    <div>
                     <div class="zs-item__date">
                         {{ item.date }}
                     </div>
@@ -17,6 +18,7 @@ export default {
                         </div>
                         <div class="zs-item__photo" v-if="item.photo" v-html="item.photo"></div>
                     </div>
+                    </div>
                 </div>
-            </div>`
+            </div></transition>`
 }

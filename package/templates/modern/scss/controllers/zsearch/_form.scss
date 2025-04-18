@@ -2,6 +2,25 @@
   background: $mainform-bg;
   padding: $form-gap;
   border-radius: $form-rounded;
+
+  &.animated {
+    animation: zsearch-pulse 2s infinite;
+  }
+}
+
+@keyframes zsearch-pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba($form-primary, 0.4);
+    box-shadow: 0 0 0 0 rgba($form-primary, 0.4);
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 10px rgba($form-primary, 0);
+    box-shadow: 0 0 0 10px rgba($form-primary, 0);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba($form-primary, 0);
+    box-shadow: 0 0 0 0 rgba($form-primary, 0);
+  }
 }
 
 .zsearch__input {

@@ -6,12 +6,12 @@
   position: relative;
   &::after{
     background: linear-gradient(270deg, $form-white, rgba($form-white, 0));
-    bottom: 0;
+    bottom: 1rem;
     content: "";
     pointer-events: none;
     position: absolute;
     right: 0;
-    top: 0;
+    top: 1rem;
     width: 3rem;
     z-index: 11;
   }

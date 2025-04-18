@@ -18,6 +18,7 @@ export default {
         const page = ref(1);
         const error = ref('');
         const more = ref(null);
+        const loading = ref(false);
         const url = computed(() => {
             return target.value ? ZSEARCH_URL + '/' + target.value : ZSEARCH_URL;
         });
@@ -88,14 +89,19 @@ export default {
             Object.keys(form.value).map((name) => {
                 data.append(name, form.value[name]);
             })
+            loading.value = true;
             let response = await fetch(url.value, {
                 method: 'POST',
-                body: data
+                body: data,
+                redirect: "error"
+            }).catch(() => {
+                console.log('error promise')
+            }).finally(() => {
+                loading.value = false;
             });
 
             if (response.ok) {
                 let answer = await response.json();
-                console.log(answer);
                 showAnswer(answer, withoutTypes);
             } else {
                 formError();
@@ -133,7 +139,6 @@ export default {
                 $('.zsearch__options').toggleClass('zsearch__options_opened');
             });
             const callback = (entries, observer) => {
-                console.log('observe');
                 if (entries[0].isIntersecting) {
                     showNext();
                 }
@@ -175,6 +180,7 @@ export default {
             results,
             error,
             more,
+            loading,
             formChanged,
             selectType
         }
@@ -188,7 +194,7 @@ export default {
                 <use href="/templates/modern/images/icons/solid.svg#times"></use>
             </svg>
         </div>
-        <div class="zsearch__form">
+        <div class="zsearch__form" :class="{animated: loading}">
             <zsearch-form :form="form" @formChanged='formChanged'></zsearch-form>
         </div>
         <div class="zsearch__result">
@@ -196,8 +202,8 @@ export default {
                 <zsearch-types :types="types" @selectType="selectType"></zsearch-types>
             </div>
             <zsearch-results :results="results"></zsearch-results>
-            <div class="zsearch__more" ref="more"></div>
         </div>
         <div v-if="error" class="zsearch__error">{{ error }}</div>
+        <div class="zsearch__more" ref="more"></div>
     </div>`
 }

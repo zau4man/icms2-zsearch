@@ -14,6 +14,16 @@
   }
 }
 
+.fade-results-enter-active,
+.fade-results-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-results-enter-from,
+.fade-results-leave-to {
+  opacity: 0;
+}
+
 .zs-item__row {
   display: flex;
   flex-direction: column;

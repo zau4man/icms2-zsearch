@@ -15,8 +15,8 @@ function install_package() {
     }
 
     //обновление
-    $core->db->query("UPDATE `{#}controllers` SET `version` = '1.0.0' WHERE `name` = 'zsearch';");
-    $core->db->query("UPDATE `{#}widgets` SET `version` = '1.0.0' WHERE `controller` = 'zsearch' AND `name` = 'zsearch';");
+    $core->db->query("UPDATE `{#}controllers` SET `version` = '1.0.1' WHERE `name` = 'zsearch';");
+    $core->db->query("UPDATE `{#}widgets` SET `version` = '1.0.1' WHERE `controller` = 'zsearch' AND `name` = 'zsearch';");
 
     return true;
 }

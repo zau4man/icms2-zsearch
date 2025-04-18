@@ -1,4 +1,5 @@
 <?php $this->addControllerJSFromContext('zsearch-wd', 'zsearch'); ?>
+<?php $this->addControllerCSSFromContext('zsearch-wd', 'zsearch'); ?>
 <script>
     const ZSEARCH_VUE = '/<?php echo $this->getTplFilePath("js/vendors/vue/vue.min.js", false); ?>';
     const ZSEARCH_COMPONENT = '/<?php echo $this->getTplFilePath("controllers/zsearch/js/zsearch-component.js", false); ?>';
